@@ -21,7 +21,7 @@ spring:
   # 数据源配置
   datasource:
     username: root
-    password: 142843827Ccq!
+    password: mysqlmaster
     # serverTimezone=UTC解决时区的报错
     url: jdbc:mysql://49.234.82.226:3306/small?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
