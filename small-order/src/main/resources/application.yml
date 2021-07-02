@@ -1,0 +1,68 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8082
+
+# 应用名称
+spring:
+  application:
+    name: small-order
+  # Nacos帮助文档: https://nacos.io/zh-cn/docs/concepts.html
+  # Nacos认证信息
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        # Nacos 服务发现与注册配置，其中子属性 server-addr 指定 Nacos 服务器主机和端口
+        server-addr: 49.234.82.226:8848
+        # 注册到 nacos 的指定 namespace，默认为 public
+        namespace: public
+
+  # 数据源配置
+  datasource:
+    username: root
+    password: 142843827Ccq!
+    # serverTimezone=UTC解决时区的报错
+    url: jdbc:mysql://49.234.82.226:3306/small?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    # druid连接池配置
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 5
+      filters: stat
+      filter:
+        wall:
+          config:
+            multi-statement-allow: true
+            none-base-statement-allow: true
+      stat-view-servlet:
+        enabled: true
+        url-pattern: "/druid/*"
+        login-username: ccq
+        login-password: 123456
+        allow:
+      web-stat-filter:
+        exclusions: "*.js,*.css,/druid/*"
+
+  redis:
+    # redis数据库索引（默认为0)
+    database: 3
+    # redis服务器地址（默认为localhost）
+    host: 1.116.74.79
+    # redis端口（默认为6379）
+    port: 6379
+    # redis访问密码（默认为空）
+    password: ylclubredis503
+    # redis连接超时时间（单位为毫秒）
+    timeout: 3000
+
+  mvc:
+    servlet:
+      # 启动时初始化DispatcherServlet
+      load-on-startup: 100
+
+
+
