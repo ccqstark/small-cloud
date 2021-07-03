@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ccqstark.smallcloud.dao.UserMapper">
+<mapper namespace="com.ccqstark.smallcloud.dao.CommodityMapper">
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        user_id, username, password
+        cod_id, shop_id, cod_name, price, stock, image
     </sql>
 
 </mapper>
