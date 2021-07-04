@@ -8,8 +8,11 @@ import com.ccqstark.smallcloud.dao.CartMapper;
 import com.ccqstark.smallcloud.dao.OrderInfoMapper;
 import com.ccqstark.smallcloud.dao.ReceiverMapper;
 import com.ccqstark.smallcloud.dto.OrderToPayInfo;
+import com.ccqstark.smallcloud.service.ICartService;
+import com.ccqstark.smallcloud.service.ICommodityService;
 import com.ccqstark.smallcloud.model.*;
 import com.ccqstark.smallcloud.service.IOrderInfoService;
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,10 +40,10 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
     private OrderContentServiceImpl orderContentService;
     @Autowired
     private ReceiverMapper receiverMapper;
-    @Autowired
-    private CommodityServiceImpl commodityService;
-    @Autowired
-    private CartServiceImpl cartService;
+    @DubboReference
+    private ICommodityService commodityService;
+    @DubboReference
+    private ICartService cartService;
 
     /**
      * 订单确认

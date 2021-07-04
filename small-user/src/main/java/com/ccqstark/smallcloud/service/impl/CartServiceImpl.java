@@ -5,6 +5,7 @@ import com.ccqstark.smallcloud.dao.CartMapper;
 import com.ccqstark.smallcloud.dto.CartListUnit;
 import com.ccqstark.smallcloud.model.Cart;
 import com.ccqstark.smallcloud.service.ICartService;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * @since 2021-05-26
  */
 @Service
+@DubboService
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements ICartService {
 
     @Autowired

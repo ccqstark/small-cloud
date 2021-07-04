@@ -96,3 +96,19 @@ spring:
 mybatis-plus:
   type-aliases-package: com.ccqstark.smallcloud.model
   mapper-locations: classpath:mapper/*.xml
+
+dubbo: #dubbo与nacos的通信配置
+  application:
+    name: small-commodity #provider在Nacos中的应用id
+  registry: #Provider与Nacos通信地址，与spring.cloud.nacos地址一致
+    address: nacos://49.234.82.226:8848
+  protocol:
+    name: dubbo #通信协议名
+    port: 20880 #配置通信端口，默认为20880
+  scan:
+    base-packages: com.ccqstark.smallcloud.service
+
+management:
+  health:
+    db:
+      enabled: false

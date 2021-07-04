@@ -96,3 +96,14 @@ spring:
 mybatis-plus:
   type-aliases-package: com.ccqstark.smallcloud.model
   mapper-locations: classpath:mapper/*.xml
+
+dubbo:
+  application:
+    name: small-order
+  registry:
+    address: nacos://49.234.82.226:8848
+
+management:
+  health:
+    db:
+      enabled: false
