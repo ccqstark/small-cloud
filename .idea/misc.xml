@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/small-user/pom.xml" />
         <option value="$PROJECT_DIR$/small-commodity/pom.xml" />
         <option value="$PROJECT_DIR$/small-order/pom.xml" />
+        <option value="$PROJECT_DIR$/small-gateway/pom.xml" />
       </list>
     </option>
   </component>

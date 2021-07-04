@@ -11,6 +11,7 @@
         <module name="small-commodity" />
         <module name="small-user" />
         <module name="small-order" />
+        <module name="small-gateway" />
       </profile>
     </annotationProcessing>
   </component>
