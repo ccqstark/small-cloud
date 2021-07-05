@@ -184,10 +184,12 @@
             <version>3.11</version>
         </dependency>
 
+
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -195,6 +197,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <optional>true</optional>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

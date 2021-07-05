@@ -112,3 +112,7 @@ management:
   health:
     db:
       enabled: false
+
+#logging:
+#  level:
+#    root: debug #为演示需要，开启debug级别日志

@@ -11,6 +11,15 @@ spring:
       discovery:
         locator:
           enabled: true #locator.enabled是自动根据URL规则实现路由转发
+
+  sleuth:
+    sampler: #采样器
+      probability: 1.0 #采样率，采样率是采集Trace的比率，默认0.1
+      rate: 10000 #每秒数据采集量，最多n条/秒Trace
+  zipkin:
+    #设置zipkin服务端地址
+    base-url: http://182.61.15.213/:9411
+
 server:
   port: 80 #服务端口号
 management:
