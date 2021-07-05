@@ -12,6 +12,35 @@ spring:
         locator:
           enabled: true #locator.enabled是自动根据URL规则实现路由转发
 
+      filter:
+        remove-hop-by-hop:
+          headers:
+            # 以下是去掉网关默认去掉的请求响应头
+            - trailer
+            - te
+            - keep-alive
+            - transfer-encoding
+            - upgrade
+            - proxy-authenticate
+            - connection
+            - proxy-authorization
+            - x-application-context
+            # 以下是去掉服务层面定义的跨域
+            - access-control-allow-credentials
+            - access-control-allow-headers
+            - access-control-allow-methods
+            - access-control-allow-origin
+            - access-control-max-age
+            - vary
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowCredentials: true
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+            maxAge: 3628800
+
   sleuth:
     sampler: #采样器
       probability: 1.0 #采样率，采样率是采集Trace的比率，默认0.1
@@ -21,7 +50,8 @@ spring:
     base-url: http://182.61.15.213/:9411
 
 server:
-  port: 80 #服务端口号
+  port: 8080 #服务端口号
+
 management:
   endpoints:
     web:

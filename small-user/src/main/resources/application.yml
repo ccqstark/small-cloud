@@ -14,6 +14,8 @@ spring:
   cloud:
     nacos:
       discovery:
+        ip: 1.116.74.79
+        port: 8080
         username: nacos
         password: nacos
         # Nacos 服务发现与注册配置，其中子属性 server-addr 指定 Nacos 服务器主机和端口
@@ -133,7 +135,7 @@ dubbo: #dubbo与nacos的通信配置
     address: nacos://49.234.82.226:8848
   protocol:
     name: dubbo #通信协议名
-    port: 20881 #配置通信端口，默认为20880
+    port: 20880 #配置通信端口，默认为20880
   scan:
     base-packages: com.ccqstark.smallcloud.service
 
